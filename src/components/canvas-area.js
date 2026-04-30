@@ -350,8 +350,10 @@ class CanvasArea extends HTMLElement {
     resizeCanvas() {
         const rect = this.canvas.getBoundingClientRect()
 
+        const minHeight = 400
+
         this.canvas.width = rect.width
-        this.canvas.height = rect.height
+        this.canvas.height = Math.max(rect.height, minHeight)
 
         this.draw()
     }
